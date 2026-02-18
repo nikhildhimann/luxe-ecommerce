@@ -1,0 +1,99 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "order_number": {
+      "type": "string",
+      "description": "Unique order number"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "image": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Order items"
+    },
+    "subtotal": {
+      "type": "number",
+      "description": "Subtotal before shipping/tax"
+    },
+    "shipping": {
+      "type": "number",
+      "description": "Shipping cost"
+    },
+    "tax": {
+      "type": "number",
+      "description": "Tax amount"
+    },
+    "total": {
+      "type": "number",
+      "description": "Total amount"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "processing",
+        "shipped",
+        "delivered",
+        "cancelled"
+      ],
+      "default": "pending",
+      "description": "Order status"
+    },
+    "shipping_address": {
+      "type": "object",
+      "properties": {
+        "full_name": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "state": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        }
+      },
+      "description": "Shipping address"
+    },
+    "payment_method": {
+      "type": "string",
+      "description": "Payment method used"
+    }
+  },
+  "required": [
+    "order_number",
+    "items",
+    "total",
+    "status"
+  ]
+}

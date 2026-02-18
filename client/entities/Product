@@ -1,0 +1,75 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Product description"
+    },
+    "price": {
+      "type": "number",
+      "description": "Product price"
+    },
+    "original_price": {
+      "type": "number",
+      "description": "Original price before discount"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Product image URLs"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "watches",
+        "bags",
+        "jewelry",
+        "accessories",
+        "clothing",
+        "shoes"
+      ],
+      "description": "Product category"
+    },
+    "brand": {
+      "type": "string",
+      "description": "Brand name"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Product tags"
+    },
+    "stock": {
+      "type": "number",
+      "description": "Available stock"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "Is featured product"
+    },
+    "new_arrival": {
+      "type": "boolean",
+      "default": false,
+      "description": "Is new arrival"
+    },
+    "rating": {
+      "type": "number",
+      "description": "Average rating"
+    }
+  },
+  "required": [
+    "name",
+    "price",
+    "category"
+  ]
+}
